@@ -27,8 +27,8 @@ function Remove(){
     let newmessage = "";
     
 
-    for(let i=0;i<=message.length;i++){
-        if(message.substring(i,i+1)==" "){
+    for(let i=0;i<=message.length+1;i++){
+        if(message.substring(i,i+1)==" " || message.substring(i,i+1)==""){
             if (checkforduplicates(word)==true){
                 newmessage += word+" ";
             }
