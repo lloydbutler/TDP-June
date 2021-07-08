@@ -1,0 +1,22 @@
+<html>
+
+<script>
+
+function dosomething(fun){
+    fun(200,6);
+}
+function clickit(){
+    let f=function(a,b){
+        let result = a+b;
+        alert("the result is: "+result);
+    }
+    let f2=function(salary, tax){
+        let tax = salary*tax/100;
+        alert("your tax is: "+tax);
+    }
+    dosomething(f2);
+}
+
+</script>
+<input type="button" onclick="clickit()">
+</html>
