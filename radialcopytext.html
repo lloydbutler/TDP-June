@@ -1,0 +1,53 @@
+<html>
+<script>
+    function Copychar(){
+        let msg=document.getElementById("message").value;
+        let newmessage="";
+        if(document.getElementById("1").checked==true){
+            for(let i=0;i<msg.length;i++){
+                if(msg.charCodeAt(i)>=65 && msg.charCodeAt(i)<=90){
+                    newmessage+=msg.substring(i,i+1);
+                }
+            }
+        }
+        if(document.getElementById("2").checked==true){
+            for(let i=0;i<msg.length;i++){
+                if(msg.charCodeAt(i)>=97 && msg.charCodeAt(i)<=122){
+                    newmessage+=msg.substring(i,i+1);
+                }
+            }
+        }
+        if(document.getElementById("3").checked==true){
+            for(let i=0;i<msg.length;i++){
+                if(msg.charCodeAt(i)>=48 && msg.charCodeAt(i)<=57){
+                    newmessage+=msg.substring(i,i+1);
+                }
+            }
+        }
+        if(document.getElementById("4").checked==true){
+            for(let i=0;i<msg.length;i++){
+                if(msg.charCodeAt(i)>=33 && msg.charCodeAt(i)<=47 || msg.charCodeAt(i)>=58 && msg.charCodeAt(i)<=64 || msg.charCodeAt(i)>=91 && msg.charCodeAt(i)<=96 || msg.charCodeAt(i)>=123 && msg.charCodeAt(i)<=126){
+                    newmessage+=msg.substring(i,i+1);
+                }
+            }
+        }
+        document.getElementById("newmessage").value=newmessage;
+    }
+    
+    
+</script>
+
+    <input type="text" id="message"><br>
+    
+    <input type="radio" id="1" name="Copy" value="UpperCase"> UpperCase </input>
+    <input type="radio" id="2" name="Copy" value="LowerCase"> LowerCase </input>
+    <input type="radio" id="3" name="Copy" value="Digits"> Digits </input>
+    <input type="radio" id="4" name="Copy" value="SpecialChar"> Special </input>
+    <br>
+    <input type="button" value="Copy" onclick="Copychar()">
+    <br>
+    
+    <input type="text" id="newmessage">
+
+
+</html>

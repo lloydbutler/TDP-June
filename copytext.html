@@ -1,0 +1,48 @@
+<html>
+<script>
+    function Copychar(myID){
+        let msg=document.getElementById("message").value;
+        let newmessage="";
+        if(myID==1){
+            for(let i=0;i<msg.length;i++){
+                if(msg.charCodeAt(i)>=65 && msg.charCodeAt(i)<=90){
+                    newmessage+=msg.substring(i,i+1);
+                }
+            }
+        }
+        if(myID==2){
+            for(let i=0;i<msg.length;i++){
+                if(msg.charCodeAt(i)>=97 && msg.charCodeAt(i)<=122){
+                    newmessage+=msg.substring(i,i+1);
+                }
+            }
+        }
+        if(myID==3){
+            for(let i=0;i<msg.length;i++){
+                if(msg.charCodeAt(i)>=48 && msg.charCodeAt(i)<=57){
+                    newmessage+=msg.substring(i,i+1);
+                }
+            }
+        }
+        if(myID==4){
+            for(let i=0;i<msg.length;i++){
+                if(msg.charCodeAt(i)>=33 && msg.charCodeAt(i)<=47 || msg.charCodeAt(i)>=58 && msg.charCodeAt(i)<=64 || msg.charCodeAt(i)>=91 && msg.charCodeAt(i)<=96 || msg.charCodeAt(i)>=123 && msg.charCodeAt(i)<=126){
+                    newmessage+=msg.substring(i,i+1);
+                }
+            }
+        }
+        document.getElementById("newmessage").value=newmessage;
+    }
+    
+    
+</script>
+
+    <input type="text" id="message"><br>
+    <input type="button" id="1" value="Upper Case" onclick="Copychar(1)">
+    <input type="button" id="2" value="Lower Case" onclick="Copychar(2)">
+    <input type="button" id="3" value="Digits" onclick="Copychar(3)">
+    <input type="button" id="4" value="Special characters" onclick="Copychar(4)">
+    <input type="text" id="newmessage">
+
+
+</html>
