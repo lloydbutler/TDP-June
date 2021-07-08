@@ -1,0 +1,25 @@
+<html>
+    <form action="myserver.html" onsubmit="return check()">
+        enter username:<input type="text" id="username"><span style="color: red;visibility: hidden" id="ErrorUn"> Username missing</span> <br>
+        enter password:<input type="password" id="pass"><span style="color: red;visibility: hidden" id="ErrorPass"> Password missing</span> <br>
+        <input type="submit">
+    </form>
+<script>
+    function check(){
+        let result=true;
+        if(document.getElementById("username").value==""){
+            document.getElementById("ErrorUn").style.visibility="visible";
+            result=false;
+        }else{
+            document.getElementById("ErrorUn").style.visibility="hidden";
+        }
+        if(document.getElementById("pass").value==""){
+            document.getElementById("ErrorPass").style.visibility="visible";
+            result=false;
+        }else{
+            document.getElementById("ErrorPass").style.visibility="hidden";
+        }
+        return result;
+    }
+</script>
+</html>

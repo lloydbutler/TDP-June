@@ -1,0 +1,25 @@
+<html>
+<body onmousemove="follow()">
+<b id="Nationwide" style="position: absolute;top:10;left:0"> Nationwide </b>
+
+<input type="text" value="Shafeeq" id="word" onmouseover="changeword()">
+
+</body>
+
+<script>
+let ref=document.getElementById("Nationwide");
+function follow(){
+    ref.style.top=event.clientY+30;
+    ref.style.left=event.clientX;
+}
+
+function changeword(){
+    let box=document.getElementById("word");
+    ref.innerHTML=box.value;
+}
+
+</script>
+
+
+
+</html>

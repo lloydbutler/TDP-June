@@ -1,0 +1,62 @@
+<html>
+    <script>
+        let QArecords=[
+            {
+                "regno":101,
+                "name":"shafeeq",
+                "marks":400
+            }
+        ];
+
+        function showRecords(){
+            
+            for(let i = 0; i<QArecords.length;i++){
+                addRecordtoDOM(QArecords[i].regno,QArecords[i].name,QArecords[i].marks);
+                
+            }
+        }
+        function showPass(){
+            
+            for(let i = 0; i<QArecords.length;i++){
+                if(QArecords[i].marks>50){
+                    addRecordtoDOM(QArecords[i].regno,QArecords[i].name,QArecords[i].marks);
+                    
+                }
+            
+            }
+        }
+        function addRecord(){
+            QArecords.push({
+                "regno":document.getElementById("regno").value,
+                "name":document.getElementById("name").value,
+                "marks":document.getElementById("marks").value,
+            });
+        }
+        function addRecordtoDOM(regno,name,marks){
+            let spanRecord=document.createElement("div");
+            let spanRegno=document.createElement("span");
+            let spanName=document.createElement("span");
+            let spanMarks=document.createElement("span");
+
+            spanRegno.innerHTML=regno;
+            spanName.innerHTML=name;
+            spanMarks.innerHTML=marks;
+
+            spanName.style.color="green";
+
+            spanRecord.appendChild(spanRegno);
+            spanRecord.appendChild(spanName);
+            spanRecord.appendChild(spanMarks);
+
+            document.body.appendChild(spanRecord);
+        }
+    </script>
+
+    Regno: <input type="text" id="regno"><br>
+    Name: <input type="text" id="name"><br>
+    Marks: <input type="text" id="marks"><br>
+
+    <input type="button" value="show Records" onclick="showRecords()">
+    <input type="button" value="Add Record" onclick="addRecord()">
+    <input type="button" value="Passed Students" onclick="showPass()">
+</html>

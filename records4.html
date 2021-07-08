@@ -1,0 +1,124 @@
+<html>
+    
+
+    Regno: <input type="text" id="regno"><br>
+    Name: <input type="text" id="name"><br>
+    Marks: <input type="text" id="marks"><br>
+
+    <input type="button" value="show Records" onclick="showRecords()">
+    <input type="button" value="Add Record" onclick="addRecord()">
+    <input type="button" value="Passed Students" onclick="showPass()">
+
+    <script>
+        let Reftable=document.createElement("table");
+        let QArecords=[
+            {
+                "regno":101,
+                "name":"shafeeq",
+                "marks":400
+            }
+        ];
+
+        function showRecords(){
+            
+            Reftable.border=1;
+            let rowRecord=document.createElement("tr");
+            let dataRegno=document.createElement("td");
+            let dataName=document.createElement("td");
+            let dataMarks=document.createElement("td");
+            let dataPercentage=document.createElement("td");
+            let dataResult=document.createElement("td");
+
+            dataRegno.innerHTML="<b> Registration </b>";
+            dataName.innerHTML="<b> Name</b>";
+            dataMarks.innerHTML="<b> Marks</b>";
+            dataPercentage.innerHTML="<b> Percentage</b>";
+            dataResult.innerHTML="<b> Result</b>";
+            
+            rowRecord.appendChild(dataRegno);
+            rowRecord.appendChild(dataName);
+            rowRecord.appendChild(dataMarks);
+            rowRecord.appendChild(dataPercentage);
+            rowRecord.appendChild(dataResult);
+            
+            Reftable.appendChild(rowRecord);
+            
+            for(let i = 0; i<QArecords.length;i++){
+                addRecordtoDOM(QArecords[i].regno,QArecords[i].name,QArecords[i].marks);
+                
+            }
+            document.body.appendChild(Reftable)
+        }
+        function showPass(){
+            Reftable.border=1;
+            let rowRecord=document.createElement("tr");
+            let dataRegno=document.createElement("td");
+            let dataName=document.createElement("td");
+            let dataMarks=document.createElement("td");
+            let dataPercentage=document.createElement("td");
+            let dataResult=document.createElement("td");
+
+            dataRegno.innerHTML="<b> Registration </b>";
+            dataName.innerHTML="<b> Name</b>";
+            dataMarks.innerHTML="<b> Marks</b>";
+            dataPercentage.innerHTML="<b> Percentage</b>";
+            dataResult.innerHTML="<b> Result</b>";
+            
+            rowRecord.appendChild(dataRegno);
+            rowRecord.appendChild(dataName);
+            rowRecord.appendChild(dataMarks);
+            rowRecord.appendChild(dataPercentage);
+            rowRecord.appendChild(dataResult);
+            
+            Reftable.appendChild(rowRecord);
+            
+            for(let i = 0; i<QArecords.length;i++){
+                if(QArecords[i].marks*100/450>50){
+                    addRecordtoDOM(QArecords[i].regno,QArecords[i].name,QArecords[i].marks);
+                    
+                }
+            
+            }
+            document.body.appendChild(Reftable)
+        }
+        function addRecord(){
+            QArecords.push({
+                "regno":document.getElementById("regno").value,
+                "name":document.getElementById("name").value,
+                "marks":document.getElementById("marks").value,
+            });
+        }
+        function addRecordtoDOM(regno,name,marks){
+                let rowRecord=document.createElement("tr");
+                let dataRegno=document.createElement("td");
+                let dataName=document.createElement("td");
+                let dataMarks=document.createElement("td");
+                let dataPercentage=document.createElement("td");
+                let dataResult=document.createElement("td");
+
+                dataRegno.innerHTML=regno;
+                dataName.innerHTML=name;
+                dataMarks.innerHTML=marks;
+                dataPercentage.innerHTML=parseInt(marks*100/450);
+                if(parseInt(marks*100/450)<=50){
+                    dataResult.style.color="red";
+                    dataResult.innerHTML="Fail";
+                }else{
+                    dataResult.style.color="green";
+                    dataResult.innerHTML="Pass";
+                }
+            
+
+                rowRecord.appendChild(dataRegno);
+                rowRecord.appendChild(dataName);
+                rowRecord.appendChild(dataMarks);
+                rowRecord.appendChild(dataPercentage);
+                rowRecord.appendChild(dataResult);
+
+                Reftable.appendChild(rowRecord);
+
+            
+        }
+        
+    </script>
+</html>

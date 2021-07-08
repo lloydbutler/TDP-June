@@ -1,0 +1,58 @@
+<html>
+<form action="myform.html" onsubmit="return check()">
+    Username: <input type="text" id="username"><span style="color: red;visibility: hidden" id="ErrorUn"> Username missing</span> <br>
+    Email: <input type="text" id="email"><span style="color: red;visibility: hidden" id="ErrorEmail"> Email missing</span> <br>
+    Password: <input type="password" id="pass"><span style="color: red;visibility: hidden" id="ErrorPass"> Password missing</span> <br>
+    <input type="submit">
+
+
+
+</form>
+<script>
+function check(){
+    
+    let un=document.getElementById("username");
+    let unerror=document.getElementById("ErrorUn");
+    let result=true;
+    if(un.value.length <= 10){
+        unerror.style.visibility="visible";
+        result=false;
+    }else{
+        
+        for(let i=1; un.value.length >= i; i++)
+        {
+            if(un.value.substring(i,i+1)==" " || un.value.substring(i,i+1)=="*"){
+                unerror.style.visibility="visible";
+                result=false;
+                return result
+                    
+            }else{
+                unerror.style.visibility="hidden";
+
+            }
+        }
+    }
+    return result
+            
+            
+        
+        if(document.getElementById("email").value==""){
+            document.getElementById("ErrorEmail").style.visibility="visible";
+            result=false;
+        }else{
+            document.getElementById("ErrorEmail").style.visibility="hidden";
+        }
+        if(document.getElementById("pass").value.length<=5){
+            document.getElementById("ErrorPass").style.visibility="visible";
+            result=false;
+        }else{
+            document.getElementById("ErrorPass").style.visibility="hidden";
+        }
+        return result;
+
+}
+
+
+</script>
+
+</html>
