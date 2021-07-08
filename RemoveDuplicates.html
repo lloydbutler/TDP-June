@@ -1,0 +1,49 @@
+<html>
+
+
+<input type="text" id="message">
+<input type="button" id="remove" value="Remove Duplicates" onclick="Remove()">
+<input type="text" id="removedmessage">
+
+<script>
+let words=[];
+function checkforduplicates(myword){
+    for(let j=0;j<words.length;j++){
+        if(words[j]==myword){
+            return false;
+        }
+    }
+    words.push(myword);
+    return true;
+    
+
+
+}
+
+function Remove(){
+    words=[];
+    let message = document.getElementById("message").value;
+    let word = "";
+    let newmessage = "";
+    
+
+    for(let i=0;i<message.length;i++){
+        if(message.substring(i,i+1)==" "){
+            if (checkforduplicates(word)==true){
+                newmessage += " " + word;
+            }
+            word="";
+            
+        }else{
+            
+            word+= message.substring (i,i+1);
+            
+        }
+        
+    }
+    
+    document.getElementById("removedmessage").value=newmessage;
+}
+
+</script>
+</html>
