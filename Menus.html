@@ -1,0 +1,56 @@
+<html>
+<span id="main1" style="position: absolute; top: 100;left: 20;"
+    onmouseenter="displaymenu1()">
+Sports
+</span>
+<span id="main2" style="position: absolute;top: 100;left: 100;" onmouseenter="displaymenu2()">
+Countries
+</span>
+
+<span id="sportsmenu" style="visibility: hidden">
+    <span id="Football" style="position: absolute; top: 125;left: 20" onmouseenter="mousein('Football')" onmouseleave="mouseout('Football')" onmousedown="information('Football')">Football</span>
+    <span id="Cricket" style="position: absolute; top: 145;left: 20" onmouseenter="mousein('Cricket')" onmouseleave="mouseout('Cricket')" onmousedown="information('Cricket')">Cricket</span>
+    <span id="Hockey" style="position: absolute; top: 165;left: 20" onmouseenter="mousein('Hockey')" onmouseleave="mouseout('Hockey')" onmousedown="information('Hockey')">Hockey</span>
+</span>
+<span id="countrymenu" style="visibility: hidden">
+    <span id="England" style="position: absolute; top: 125;left: 100" onmouseenter="mousein('England')" onmouseleave="mouseout('England')">England</span>
+    <span id="Scotland" style="position: absolute; top: 145;left: 100" onmouseenter="mousein('Scotland')" onmouseleave="mouseout('Scotland')">Scotland</span>
+    <span id="Wales" style="position: absolute; top: 165;left: 100" onmouseenter="mousein('Wales')" onmouseleave="mouseout('Wales')">Wales</span>
+</span>
+<span id="information" style=" position: absolute; top:200; left: 20">
+
+</span>
+
+
+    
+</span>
+<script>
+    function mousein(myID){
+        document.getElementById(myID).style.backgroundColor="blue";
+    }
+    function mouseout(myID){
+        document.getElementById(myID).style.backgroundColor="white";
+    }
+    function displaymenu1(){
+        document.getElementById("sportsmenu").style.visibility="visible";
+        document.getElementById("countrymenu").style.visibility="hidden";
+    }
+
+    function displaymenu2(){
+        document.getElementById("countrymenu").style.visibility="visible";
+        document.getElementById("sportsmenu").style.visibility="hidden";
+    }
+    function information(myID){     
+        
+        document.getElementById("information").innerText= "";
+        document.getElementById("information").innerText= myID + " is a sport";
+        
+        
+        
+        
+        
+    }
+
+
+</script>
+</html>
