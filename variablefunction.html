@@ -1,0 +1,32 @@
+<html>
+
+<script>
+
+    function boom(day){
+        let something;
+        if (day==1){
+            dosomething=function(){
+                alert("hello");
+            }
+        }
+        if (day==2){
+            dosomething=function(){
+                let salary = 9000;
+                let tax = salary*0.25;
+                let net=salary-tax;
+                console.log("Tax: "+tax);
+                console.log("salary: "+salary);
+                console.log("net: " + net);
+            }
+        }
+        return dosomething;
+    }
+
+    function clickit(){
+        let d=boom(2)
+        d();
+    }
+</script>
+
+<input type="button" onclick="clickit()">
+</html>
